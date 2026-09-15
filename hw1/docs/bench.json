@@ -1,0 +1,56 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "device": "mps:0",
+  "dtype": "bfloat16",
+  "load_time_sec": 2.0,
+  "tokens_per_sec": 27.96,
+  "tokens_per_sec_all": [
+    26.31,
+    27.96,
+    27.96
+  ],
+  "peak_rss_mb": 760.5,
+  "runs": [
+    {
+      "seconds": 2.698659,
+      "new_tokens": 71
+    },
+    {
+      "seconds": 2.538986,
+      "new_tokens": 71
+    },
+    {
+      "seconds": 2.539408,
+      "new_tokens": 71
+    }
+  ],
+  "params": {
+    "model": {
+      "name": "Qwen/Qwen3-0.6B",
+      "dtype": "bfloat16",
+      "device": "auto"
+    },
+    "generate": {
+      "max_new_tokens": 200,
+      "temperature": 0.0,
+      "seed": 42,
+      "enable_thinking": false
+    },
+    "bench": {
+      "warmup_runs": 1,
+      "measure_runs": 3,
+      "prompt": "Объясни, что такое MLOps, в трёх предложениях."
+    }
+  },
+  "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+  "timestamp_utc": "2026-09-08T15:38:17.263953+00:00",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.14",
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.1",
+    "accelerate": "1.11.0"
+  },
+  "timing_scope": "model.generate + device synchronization; excludes tokenization and decoding",
+  "rss_unit": "MiB (2**20 bytes); process high-water mark, not total GPU/unified memory"
+}

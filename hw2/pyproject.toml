@@ -1,0 +1,15 @@
+[project]
+name = "mlops-hw2"
+version = "0.1.0"
+description = "Домашняя работа 2: параметры модели, хуки и память"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torch==2.8.0",
+    "transformers==4.57.1",
+    "accelerate==1.11.0",
+    "peft==0.17.1",
+    "matplotlib==3.10.7",
+    "numpy==2.3.4",
+    "psutil==7.1.2",
+    "pyyaml==6.0.3",
+]
