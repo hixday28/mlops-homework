@@ -13,7 +13,7 @@ source:
   excluded_tags: [android, unity3d, wordpress, битрикс, ios, django, php, laravel,
                   spring, java, javascript, reactjs, node.js, c#, asp.net]
 collect:
-  version: "v1"
+  version: "v2"
   sources:
     v1:
       - "data/source/stackoverflow.jsonl"

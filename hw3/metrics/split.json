@@ -1,22 +1,22 @@
 {
-  "version": "v1",
+  "version": "v2",
   "seed": 42,
   "group_key": "topic",
-  "groups_total": 637,
+  "groups_total": 794,
   "sizes": {
-    "train": 994,
-    "val": 84,
-    "test": 70
+    "train": 1267,
+    "val": 111,
+    "test": 104
   },
   "groups": {
-    "train": 523,
-    "val": 62,
-    "test": 52
+    "train": 642,
+    "val": 78,
+    "test": 74
   },
   "ratios_actual": {
-    "train": 0.8659,
-    "val": 0.0732,
-    "test": 0.061
+    "train": 0.8549,
+    "val": 0.0749,
+    "test": 0.0702
   },
   "contamination": {
     "id_overlap": 0,
