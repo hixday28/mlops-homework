@@ -1,0 +1,76 @@
+source:
+  url: "https://huggingface.co/datasets/IlyaGusev/ru_stackoverflow/resolve/3bfd79e598eaab49b8b5ec7397d5c12b0f22416a/ru_stackoverflow.jsonl.zst"
+  revision: "3bfd79e598eaab49b8b5ec7397d5c12b0f22416a"
+  archive_sha256: "e3f6eda2b3df7de1d3cc4a45ce2e69bb1e439b7736cd8d81e911129bd512dab9"
+  download: "data/download/ru_stackoverflow.jsonl.zst"
+  snapshot: "data/source/stackoverflow.jsonl"
+  metadata: "data/source/manifest.json"
+  tags: [машинное-обучение, нейронные-сети, tensorflow, keras, pytorch, scikit-learn,
+         sklearn, xgboost, catboost, docker, docker-compose, dockerfile,
+         kubernetes, airflow, apache-spark, pyspark, cuda, cudnn, mlflow, dvc,
+         git, gitlab, gitlab-ci, github-actions, jenkins, ansible, virtualenv,
+         pip, conda, anaconda, venv, fastapi, gunicorn, uwsgi, prometheus, grafana]
+  excluded_tags: [android, unity3d, wordpress, битрикс, ios, django, php, laravel,
+                  spring, java, javascript, reactjs, node.js, c#, asp.net]
+collect:
+  version: "v1"
+  sources:
+    v1:
+      - "data/source/stackoverflow.jsonl"
+    v2:
+      - "data/source/stackoverflow.jsonl"
+  limits:
+    v1: 1200
+    v2: 1550
+  max_per_group: 100
+  min_answer_chars: 30
+  min_answer_score: 1
+  min_cyrillic_chars: 20
+  system_prompts:
+    - "Помоги разобраться в вопросе по ML и инфраструктуре MLOps. Отвечай по-русски, сохраняя команды и код."
+    - "Ты технический помощник по подготовке данных, окружениям и развёртыванию ML. Дай ответ на русском языке."
+    - "Ответь на технический вопрос по инструментам и инфраструктуре машинного обучения. Используй русский язык и необходимые примеры кода."
+    - "Помоги решить практическую задачу по данным или эксплуатации ML-систем. Объясни решение по-русски."
+clean:
+  min_user_chars: 30
+  max_user_chars: 4000
+  min_assistant_chars: 2
+  max_assistant_chars: 8000
+  near_dup:
+    enabled: true
+    shingle_words: 4
+    num_perm: 64
+    threshold: 0.85
+  pii:
+    enabled: true
+
+diversity:
+  min_examples: 1000
+  min_system_prompts: 3
+  min_groups: 50
+  max_group_share: 0.10
+  min_answer_len_ratio: 1.6
+  max_same_length_share: 0.25
+  max_duplicate_answer_share: 0.30
+split:
+  group_key: "topic"
+  ratios:
+    train: 0.8
+    val: 0.1
+    test: 0.1
+  seed: 42
+contamination:
+  threshold: 0.85
+paths:
+  raw: "data/raw.jsonl"
+  clean: "data/clean.jsonl"
+  train: "data/train.jsonl"
+  val: "data/val.jsonl"
+  test: "data/test.jsonl"
+  attribution: "data/attribution.jsonl"
+  metrics_collect: "metrics/collect.json"
+  metrics_clean: "metrics/clean.json"
+  metrics_split: "metrics/split.json"
+  metrics_diversity: "metrics/diversity.json"
+  metrics_contamination: "metrics/contamination.json"
+  datasheet: "docs/datasheet.md"

@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "examples": 1148,
+  "system_prompts": 4,
+  "groups": 637,
+  "largest_group": "git",
+  "largest_group_share": 0.0871,
+  "answer_len": {
+    "p10": 160,
+    "p50": 569,
+    "p90": 2028,
+    "ratio_p90_p10": 12.68,
+    "cv": 1.033,
+    "min": 34,
+    "max": 6477
+  },
+  "same_length_share": 0.0052,
+  "duplicate_answer_share": 0.0,
+  "thresholds": {
+    "min_examples": 1000,
+    "min_system_prompts": 3,
+    "min_groups": 50,
+    "max_group_share": 0.1,
+    "min_answer_len_ratio": 1.6,
+    "max_same_length_share": 0.25,
+    "max_duplicate_answer_share": 0.3
+  },
+  "violations": [],
+  "passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "rows_scanned": 6610,
+  "dropped_answer_filter": 4485,
+  "dropped_image_dependency": 358,
+  "dropped_answer_language_length": 56,
+  "dropped_group_cap": 50,
+  "version": "v1",
+  "rows_written": 1200,
+  "eligible_candidates": 1711,
+  "not_selected_limit": 461,
+  "groups": 673,
+  "system_prompt_variants": 4,
+  "transformation": "tag scope; accepted positive-score answers; no image dependencies; chat conversion; deterministic system variants"
+}

@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+dvc_remote/
+data/
+.DS_Store
+*.bak
+*.orig
+*.log
+~$*
