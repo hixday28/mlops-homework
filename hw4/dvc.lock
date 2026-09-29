@@ -1,0 +1,66 @@
+schema: '2.0'
+stages:
+  tokenize:
+    cmd: python -m src.tokenize_data
+    deps:
+    - path: data/train.jsonl
+      hash: md5
+      md5: 329bc267776da3005cded3f9a15a4cc2
+      size: 3669475
+    - path: data/val.jsonl
+      hash: md5
+      md5: 1a2cb1bb1cd47546741f5b4d0be84f14
+      size: 295861
+    - path: src/collate.py
+      hash: md5
+      md5: 3f589814c25be76d30b8e9ef565ef5a7
+      size: 1517
+    - path: src/config.py
+      hash: md5
+      md5: d1af94455f9641952ff6c34f46ac6060
+      size: 336
+    - path: src/pack.py
+      hash: md5
+      md5: fe44de18d190fd5fb4b2a84a1fc3628f
+      size: 2862
+    - path: src/prompt.py
+      hash: md5
+      md5: a1a2bb10f5eda2f705bfc5762fc1e4b9
+      size: 4629
+    - path: src/tokenize_data.py
+      hash: md5
+      md5: 6c5adaaf1c035d87b5f5768db29bd45d
+      size: 15875
+    params:
+      params.yaml:
+        data.out_dir: data/tokenized
+        data.train_jsonl: data/train.jsonl
+        data.val_jsonl: data/val.jsonl
+        model:
+          name: Qwen/Qwen3-0.6B
+          revision: c1899de289a04d12100db370d81485cdf75e47ca
+          enable_thinking: false
+        packing:
+          enabled: false
+          batch_size: 8
+        tokenize:
+          max_seq_len: 2560
+          truncated_warn_ratio: 0.05
+          padding_side: left
+        train_estimate:
+          epochs: 3
+          tokens_per_sec: 27.96
+    outs:
+    - path: data/tokenized
+      hash: md5
+      md5: 3c6e698af4960d2df22f3373e803c790.dir
+      size: 7867382
+      nfiles: 2
+    - path: docs/tokenize_report.md
+      hash: md5
+      md5: 37a4f6c4653e38e12532870c6c696a21
+      size: 2386
+    - path: metrics/tokenize.json
+      hash: md5
+      md5: 579ac2e137102cb1f672273bfb3dac34
+      size: 2187

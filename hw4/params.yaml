@@ -1,0 +1,22 @@
+model:
+  name: "Qwen/Qwen3-0.6B"
+  revision: "c1899de289a04d12100db370d81485cdf75e47ca"
+  enable_thinking: false
+
+data:
+  train_jsonl: "data/train.jsonl"
+  val_jsonl: "data/val.jsonl"
+  out_dir: "data/tokenized"
+
+tokenize:
+  max_seq_len: 2560 # p99 train = 2326; небольшой запас, без увеличения до 4096
+  truncated_warn_ratio: 0.05
+  padding_side: "left"
+
+packing:
+  enabled: false # без блочной маски внимания packing не используем
+  batch_size: 8
+
+train_estimate:
+  epochs: 3
+  tokens_per_sec: 27.96 # hw1/docs/bench.json, генерация на Apple Silicon
