@@ -1,4 +1,4 @@
 [core]
     remote = local
 ['remote "local"']
-    url = ../../../../dvc_remote_hw4
+    url = ../../../dvc_remote_hw4
