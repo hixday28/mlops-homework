@@ -41,3 +41,10 @@ make check
 [Код и запуск](hw4/README.md), [отчёт токенизации](hw4/docs/tokenize_report.md),
 [разбор четырёх дефектов](hw4/docs/defects.md).
 Проверка: `cd hw4 && make check`. Данные и тензоры хранятся в DVC.
+
+## ДЗ 5. LoRA-дообучение
+
+[Код и запуск](hw5/README.md), [кривые](hw5/docs/curves.png),
+[сравнение базы и адаптера](hw5/docs/compare.md),
+[разбор пяти дефектов](hw5/docs/defects.md).
+Данные, адаптеры и JSON-метрики хранятся в DVC; проверка — `cd hw5 && make check`.

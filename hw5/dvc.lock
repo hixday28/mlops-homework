@@ -1,0 +1,262 @@
+schema: '2.0'
+stages:
+  train_all:
+    cmd: uv run --locked python -m src.train --variant all_layers
+    deps:
+    - path: data/tokenized/train.pt
+      hash: md5
+      md5: e7d4414a6a18325b3e0dce72ac788413
+      size: 7289889
+    - path: data/tokenized/val.pt
+      hash: md5
+      md5: ea828415e2bfb1637b8f1fb644e08f57
+      size: 577493
+    - path: src/config.py
+      hash: md5
+      md5: d1af94455f9641952ff6c34f46ac6060
+      size: 336
+    - path: src/data.py
+      hash: md5
+      md5: d78a3ccae087e8bcfdc3b3c945d66089
+      size: 1985
+    - path: src/loss.py
+      hash: md5
+      md5: 63f54364716051209dc702bdb39c71e7
+      size: 1584
+    - path: src/runtime.py
+      hash: md5
+      md5: 19e2a30dbb77c96c004c0e26f360c53c
+      size: 2225
+    - path: src/train.py
+      hash: md5
+      md5: 6711a41ff764d2aa921c3db66decc53f
+      size: 12110
+    - path: uv.lock
+      hash: md5
+      md5: f1e1738d9cc5397735a1e21208c18b0c
+      size: 219631
+    params:
+      params.yaml:
+        data:
+          train: data/tokenized/train.pt
+          val: data/tokenized/val.pt
+        lora:
+          r: 8
+          alpha: 16
+          dropout: 0.05
+          target_modules:
+          - q_proj
+          - k_proj
+          - v_proj
+          - o_proj
+          - gate_proj
+          - up_proj
+          - down_proj
+        model:
+          name: Qwen/Qwen3-0.6B
+          device: auto
+          dtype: bfloat16
+          enable_thinking: false
+          revision: c1899de289a04d12100db370d81485cdf75e47ca
+        paths.metrics: metrics
+        paths.models: models
+        train:
+          seed: 42
+          epochs: 1
+          batch_size: 1
+          grad_accum: 8
+          lr: 0.0002
+          warmup_ratio: 0.03
+          weight_decay: 0.0
+          max_grad_norm: 1.0
+          eval_every: 10
+          eval_batch_size: 1
+          gradient_checkpointing: true
+          max_steps:
+        variants:
+        - name: all_layers
+          freeze_first: 0
+        - name: freeze14
+          freeze_first: 14
+    outs:
+    - path: metrics/train_all_layers.json
+      hash: md5
+      md5: 44c5f49ae20182ad36e48206a1e6d0ad
+      size: 7136
+    - path: models/adapter_all_layers
+      hash: md5
+      md5: 9c6b896cf44eda477378fa39cf327ed9.dir
+      size: 36126974
+      nfiles: 11
+  train_freeze:
+    cmd: uv run --locked python -m src.train --variant freeze14
+    deps:
+    - path: data/tokenized/train.pt
+      hash: md5
+      md5: e7d4414a6a18325b3e0dce72ac788413
+      size: 7289889
+    - path: data/tokenized/val.pt
+      hash: md5
+      md5: ea828415e2bfb1637b8f1fb644e08f57
+      size: 577493
+    - path: src/config.py
+      hash: md5
+      md5: d1af94455f9641952ff6c34f46ac6060
+      size: 336
+    - path: src/data.py
+      hash: md5
+      md5: d78a3ccae087e8bcfdc3b3c945d66089
+      size: 1985
+    - path: src/loss.py
+      hash: md5
+      md5: 63f54364716051209dc702bdb39c71e7
+      size: 1584
+    - path: src/runtime.py
+      hash: md5
+      md5: 19e2a30dbb77c96c004c0e26f360c53c
+      size: 2225
+    - path: src/train.py
+      hash: md5
+      md5: 6711a41ff764d2aa921c3db66decc53f
+      size: 12110
+    - path: uv.lock
+      hash: md5
+      md5: f1e1738d9cc5397735a1e21208c18b0c
+      size: 219631
+    params:
+      params.yaml:
+        data:
+          train: data/tokenized/train.pt
+          val: data/tokenized/val.pt
+        lora:
+          r: 8
+          alpha: 16
+          dropout: 0.05
+          target_modules:
+          - q_proj
+          - k_proj
+          - v_proj
+          - o_proj
+          - gate_proj
+          - up_proj
+          - down_proj
+        model:
+          name: Qwen/Qwen3-0.6B
+          device: auto
+          dtype: bfloat16
+          enable_thinking: false
+          revision: c1899de289a04d12100db370d81485cdf75e47ca
+        paths.metrics: metrics
+        paths.models: models
+        train:
+          seed: 42
+          epochs: 1
+          batch_size: 1
+          grad_accum: 8
+          lr: 0.0002
+          warmup_ratio: 0.03
+          weight_decay: 0.0
+          max_grad_norm: 1.0
+          eval_every: 10
+          eval_batch_size: 1
+          gradient_checkpointing: true
+          max_steps:
+        variants:
+        - name: all_layers
+          freeze_first: 0
+        - name: freeze14
+          freeze_first: 14
+    outs:
+    - path: metrics/train_freeze14.json
+      hash: md5
+      md5: 9dcc0446794dc0ac28ec175e673a3727
+      size: 7124
+    - path: models/adapter_freeze14
+      hash: md5
+      md5: f978b59f9b3ce3387f3d0e28af556a27.dir
+      size: 26008512
+      nfiles: 11
+  compare:
+    cmd: uv run --locked python -m src.compare --variant all_layers
+    deps:
+    - path: models/adapter_all_layers
+      hash: md5
+      md5: 9c6b896cf44eda477378fa39cf327ed9.dir
+      size: 36126974
+      nfiles: 11
+    - path: src/compare.py
+      hash: md5
+      md5: 3939318917531e38b1751d996c1b322a
+      size: 4159
+    - path: src/config.py
+      hash: md5
+      md5: d1af94455f9641952ff6c34f46ac6060
+      size: 336
+    - path: src/runtime.py
+      hash: md5
+      md5: 19e2a30dbb77c96c004c0e26f360c53c
+      size: 2225
+    - path: uv.lock
+      hash: md5
+      md5: f1e1738d9cc5397735a1e21208c18b0c
+      size: 219631
+    params:
+      params.yaml:
+        compare:
+          max_new_tokens: 120
+          prompts:
+          - Как посмотреть список запущенных Docker-контейнеров и их логи?
+          - Чем git fetch отличается от git pull?
+          - Как создать отдельное виртуальное окружение Python и установить
+            зависимости?
+          - Почему модель может переобучаться и как это заметить по train и val
+            loss?
+          - Как сохранить и загрузить обученную модель scikit-learn для
+            инференса?
+          system: Ты помогаешь с вопросами по ML и инфраструктуре MLOps. Отвечай
+            по-русски и объясняй решение.
+        model:
+          name: Qwen/Qwen3-0.6B
+          device: auto
+          dtype: bfloat16
+          enable_thinking: false
+          revision: c1899de289a04d12100db370d81485cdf75e47ca
+        paths.compare: docs/compare.md
+        paths.metrics: metrics
+    outs:
+    - path: docs/compare.md
+      hash: md5
+      md5: 158b5116989a68146cd0739c1fa4cf0f
+      size: 6438
+    - path: metrics/compare_all_layers.json
+      hash: md5
+      md5: 752dc256a9663881c910fd314b4536e4
+      size: 12546
+  plot:
+    cmd: uv run --locked python -m src.plot
+    deps:
+    - path: metrics/train_all_layers.json
+      hash: md5
+      md5: 44c5f49ae20182ad36e48206a1e6d0ad
+      size: 7136
+    - path: metrics/train_freeze14.json
+      hash: md5
+      md5: 9dcc0446794dc0ac28ec175e673a3727
+      size: 7124
+    - path: src/config.py
+      hash: md5
+      md5: d1af94455f9641952ff6c34f46ac6060
+      size: 336
+    - path: src/plot.py
+      hash: md5
+      md5: 1cc351b3b43a7f3eca47ec0c5ef92940
+      size: 1604
+    params:
+      params.yaml:
+        paths.curves: docs/curves.png
+        paths.metrics: metrics
+    outs:
+    - path: docs/curves.png
+      hash: md5
+      md5: e1901a9b659a115345c18591f0b1a00a
+      size: 127385

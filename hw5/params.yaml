@@ -1,0 +1,54 @@
+model:
+  name: Qwen/Qwen3-0.6B
+  device: auto
+  dtype: bfloat16
+  enable_thinking: false
+  revision: c1899de289a04d12100db370d81485cdf75e47ca
+data:
+  train: data/tokenized/train.pt
+  val: data/tokenized/val.pt
+lora:
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+train:
+  seed: 42
+  epochs: 1
+  batch_size: 1
+  grad_accum: 8
+  lr: 0.0002
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  eval_every: 10
+  eval_batch_size: 1
+  gradient_checkpointing: true
+  max_steps: null
+variants:
+- name: all_layers
+  freeze_first: 0
+- name: freeze14
+  freeze_first: 14
+compare:
+  max_new_tokens: 120
+  prompts:
+  - Как посмотреть список запущенных Docker-контейнеров и их логи?
+  - Чем git fetch отличается от git pull?
+  - Как создать отдельное виртуальное окружение Python и установить зависимости?
+  - Почему модель может переобучаться и как это заметить по train и val loss?
+  - Как сохранить и загрузить обученную модель scikit-learn для инференса?
+  system: Ты помогаешь с вопросами по ML и инфраструктуре MLOps. Отвечай по-русски
+    и объясняй решение.
+paths:
+  models: models
+  metrics: metrics
+  curves: docs/curves.png
+  compare: docs/compare.md
