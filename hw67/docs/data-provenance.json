@@ -1,0 +1,14 @@
+{
+  "training_rows": 1267,
+  "golden_rows": 50,
+  "behavioral_rows": 3,
+  "hw4_train_jsonl_sha256": "9d714abd80e17aed77469f017b0bdd71a5f6e6b7201ac8a1a53ad29b4be32aba",
+  "hw4_train_pt_sha256": "54f4b1ebfcb1cc39917bdcd4d64bb4ed99b0fd9e1c2031e6410bf26741120604",
+  "ordered_tensor_ids_match": true,
+  "sources": [
+    "MLOPS-26 lecture6.html, 12 slides",
+    "MLOPS-26 lecture7.html, 12 slides"
+  ],
+  "annotation": "Разметка проверена по содержимому лекций; источник и обоснование сохранены для каждого вопроса.",
+  "semantic_limit": "Проверка текста и групп не исключает всех смысловых пересечений; сценарии оценки составлены отдельно от Stack Overflow train."
+}

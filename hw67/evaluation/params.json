@@ -1,0 +1,10 @@
+{
+  "golden": "data/eval/golden.jsonl",
+  "training_index": "data/eval/training-index.jsonl",
+  "behavioral": "data/eval/behavioral.jsonl",
+  "critical_slices": ["registry", "release_safety"],
+  "seed": 42,
+  "system": "Ты отвечаешь на вопросы по MLOps: эксперименты, хранение артефактов, реестр моделей, оценка и выпуск. Выбери правильный вариант из вопроса. Верни только JSON с единственным полем answer и строковой меткой A, B или C. Если запрос не относится к MLOps, верни только {\"answer\":\"REFUSE\"}. Не добавляй объяснений и Markdown.",
+  "max_new_tokens": 32,
+  "enable_thinking": false
+}

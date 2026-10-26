@@ -1,0 +1,7 @@
+.venv
+.git
+.dvc
+data
+metrics
+reports
+__pycache__

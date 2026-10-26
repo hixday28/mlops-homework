@@ -48,3 +48,8 @@ make check
 [сравнение базы и адаптера](hw5/docs/compare.md),
 [разбор пяти дефектов](hw5/docs/defects.md).
 Данные, адаптеры и JSON-метрики хранятся в DVC; проверка — `cd hw5 && make check`.
+
+## ДЗ 6+7. MLflow и проверка качества
+
+[Код и запуск](hw67/README.md), [сравнение](hw67/docs/comparison.csv),
+[единый вывод](hw67/docs/conclusion.md), [разбор дефектов](hw67/docs/defects.md).
