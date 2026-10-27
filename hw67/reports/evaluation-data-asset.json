@@ -1,0 +1,14 @@
+{
+  "file": "hw67-evaluation-data.zip",
+  "size_bytes": 620083,
+  "sha256": "367c95248b9e2a3f250637cd1b100e471e7cbb712135cc125359b56ac51d59f6",
+  "url": "https://github.com/hixday28/mlops-homework/releases/download/hw67-submission/hw67-evaluation-data.zip",
+  "contents": [
+    "golden:50",
+    "behavioral:3",
+    "training-index:1267",
+    "training-attribution",
+    "DVC metadata",
+    "provenance"
+  ]
+}

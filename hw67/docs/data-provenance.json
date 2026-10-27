@@ -10,5 +10,9 @@
     "MLOPS-26 lecture7.html, 12 slides"
   ],
   "annotation": "Разметка проверена по содержимому лекций; источник и обоснование сохранены для каждого вопроса.",
-  "semantic_limit": "Проверка текста и групп не исключает всех смысловых пересечений; сценарии оценки составлены отдельно от Stack Overflow train."
+  "semantic_limit": "Проверка текста и групп не исключает всех смысловых пересечений; сценарии оценки составлены отдельно от Stack Overflow train.",
+  "lecture_sha256": {
+    "lecture6.html": "a2c3c39e20eb1ba8e5734b0521ee29e2db950361e60ef58e8e0706dbc6cdac8d",
+    "lecture7.html": "f04384ffa9235883bd02cb2a8235757b53ddeb5b7647572c3e0cae3c690eebed"
+  }
 }

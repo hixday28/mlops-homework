@@ -1,0 +1,320 @@
+[
+  {
+    "id": "mlops-001",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.49108395800431026
+  },
+  {
+    "id": "mlops-002",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.47340545800398104
+  },
+  {
+    "id": "mlops-003",
+    "raw": "{\"answer\": \"B\"}",
+    "error": null,
+    "latency_seconds": 0.4644763750038692
+  },
+  {
+    "id": "mlops-004",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.6419920839980477
+  },
+  {
+    "id": "mlops-005",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.6729020000057062
+  },
+  {
+    "id": "mlops-006",
+    "raw": "{\"answer\": \"B\"}",
+    "error": null,
+    "latency_seconds": 0.5268847080005798
+  },
+  {
+    "id": "mlops-007",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.5522870830027387
+  },
+  {
+    "id": "mlops-008",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.5308624169992981
+  },
+  {
+    "id": "mlops-009",
+    "raw": "{\"answer\": \"B\"}",
+    "error": null,
+    "latency_seconds": 0.5548495420007384
+  },
+  {
+    "id": "mlops-010",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5926100410069921
+  },
+  {
+    "id": "mlops-011",
+    "raw": "{\n  \"answer\": \"C\",\n  \"choices\": [\"A\", \"B\", \"C\", \"REFUSE\"]\n}",
+    "error": null,
+    "latency_seconds": 1.6445878330050618
+  },
+  {
+    "id": "mlops-012",
+    "raw": "{\n  \"answer\": \"B\",\n  \"choices\": [\"A\", \"B\", \"C\", \"REFUSE\"]\n}",
+    "error": null,
+    "latency_seconds": 1.5481430420040851
+  },
+  {
+    "id": "mlops-013",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.5661870830008411
+  },
+  {
+    "id": "mlops-014",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.5439044169979752
+  },
+  {
+    "id": "mlops-015",
+    "raw": "{\"answer\":\"B\"}",
+    "error": null,
+    "latency_seconds": 0.6044017500025802
+  },
+  {
+    "id": "mlops-016",
+    "raw": "{\n  \"answer\": \"A\",\n  \"choices\": [\"A\", \"B\", \"C\", \"REFUSE\"]\n}",
+    "error": null,
+    "latency_seconds": 1.4150080000035814
+  },
+  {
+    "id": "mlops-017",
+    "raw": "{\n  \"answer\": \"C\",\n  \"A\": \"Нет, файлам нужен сохранный artifact store\",\n  \"B\": \"Н",
+    "error": null,
+    "latency_seconds": 2.0971887499981676
+  },
+  {
+    "id": "mlops-018",
+    "raw": "{\"answer\": \"B. Подключённый volume с артефактами\"}",
+    "error": null,
+    "latency_seconds": 1.267778791996534
+  },
+  {
+    "id": "mlops-019",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5173688340000808
+  },
+  {
+    "id": "mlops-020",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5314636249968316
+  },
+  {
+    "id": "mlops-021",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.5266607919984381
+  },
+  {
+    "id": "mlops-022",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5535063330025878
+  },
+  {
+    "id": "mlops-023",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.6119426669974928
+  },
+  {
+    "id": "mlops-024",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.6386019169949577
+  },
+  {
+    "id": "mlops-025",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.6076658750025672
+  },
+  {
+    "id": "mlops-026",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.5123806669944315
+  },
+  {
+    "id": "mlops-027",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.5071854580019135
+  },
+  {
+    "id": "mlops-028",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5471091250001336
+  },
+  {
+    "id": "mlops-029",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.5834618339940789
+  },
+  {
+    "id": "mlops-030",
+    "raw": "{\"answer\":\"B\"}",
+    "error": null,
+    "latency_seconds": 0.580519249997451
+  },
+  {
+    "id": "mlops-031",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5661171669999021
+  },
+  {
+    "id": "mlops-032",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.7067062920032186
+  },
+  {
+    "id": "mlops-033",
+    "raw": "{\"answer\":\"C\"}",
+    "error": null,
+    "latency_seconds": 0.6249192500035861
+  },
+  {
+    "id": "mlops-034",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.6058115000050748
+  },
+  {
+    "id": "mlops-035",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5590104579969193
+  },
+  {
+    "id": "mlops-036",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.5792614159945515
+  },
+  {
+    "id": "mlops-037",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.7322174170039943
+  },
+  {
+    "id": "mlops-038",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.6965837919997284
+  },
+  {
+    "id": "mlops-039",
+    "raw": "{\"answer\": \"B\"}",
+    "error": null,
+    "latency_seconds": 0.6706174999999348
+  },
+  {
+    "id": "mlops-040",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5454808750000666
+  },
+  {
+    "id": "mlops-041",
+    "raw": "{\"answer\":\"C\"}",
+    "error": null,
+    "latency_seconds": 0.540876125000068
+  },
+  {
+    "id": "mlops-042",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.722836584005563
+  },
+  {
+    "id": "mlops-043",
+    "raw": "{\"answer\":\"C\"}",
+    "error": null,
+    "latency_seconds": 0.6833751249941997
+  },
+  {
+    "id": "mlops-044",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.577318292002019
+  },
+  {
+    "id": "mlops-045",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.5207547919999342
+  },
+  {
+    "id": "mlops-046",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.6247312089981278
+  },
+  {
+    "id": "mlops-047",
+    "raw": "{\"answer\": \"C\"}",
+    "error": null,
+    "latency_seconds": 0.6812907909989008
+  },
+  {
+    "id": "mlops-048",
+    "raw": "{\"answer\": \"B\"}",
+    "error": null,
+    "latency_seconds": 0.5999270410029567
+  },
+  {
+    "id": "mlops-049",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5217811660040752
+  },
+  {
+    "id": "mlops-050",
+    "raw": "{\"answer\":\"C\"}",
+    "error": null,
+    "latency_seconds": 0.6289364160038531
+  },
+  {
+    "id": "behavior-format",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.5723491250028019
+  },
+  {
+    "id": "behavior-paraphrase",
+    "raw": "{\"answer\": \"A\"}",
+    "error": null,
+    "latency_seconds": 0.6180847089999588
+  },
+  {
+    "id": "behavior-refusal",
+    "raw": "{\"answer\":\"A\"}",
+    "error": null,
+    "latency_seconds": 0.552097583997238
+  }
+]

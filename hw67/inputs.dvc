@@ -3,4 +3,4 @@ outs:
   size: 7867382
   nfiles: 2
   hash: md5
-  path: tokenized
+  path: data/tokenized

@@ -1,0 +1,36 @@
+{
+  "tracking_uri": "http://127.0.0.1:5006",
+  "run_ids": {
+    "sweep": "706a09a9455f44d89e1ffbe6d0870a0c",
+    "evaluation": "bab1645d1d0e4bd286e972e38a254888",
+    "qv-r4-low": "f87246f6ecb74213abef9f467e42e0d5",
+    "qv-r4-high": "69238611256642aa92ec32e0c5eeb299",
+    "qv-r8-low": "09db6e7e25f340f8b9a15a6e8d2a67ec",
+    "qv-r8-high": "f7ee6df830c34796a9757588e6fa4394",
+    "all-r8-low": "4fe1458e62f34f1f90dbb7b0caf894b9",
+    "all-r8-high": "d19e532988bb4b6696e59ca89fd2edfa",
+    "storage": "5f3dc85a2c124d0ab568c4a2b0538a04"
+  },
+  "links": {
+    "sweep": "http://127.0.0.1:5006/#/experiments/1/runs/706a09a9455f44d89e1ffbe6d0870a0c",
+    "evaluation": "http://127.0.0.1:5006/#/experiments/34/runs/bab1645d1d0e4bd286e972e38a254888",
+    "qv-r4-low": "http://127.0.0.1:5006/#/experiments/1/runs/f87246f6ecb74213abef9f467e42e0d5",
+    "qv-r4-high": "http://127.0.0.1:5006/#/experiments/1/runs/69238611256642aa92ec32e0c5eeb299",
+    "qv-r8-low": "http://127.0.0.1:5006/#/experiments/1/runs/09db6e7e25f340f8b9a15a6e8d2a67ec",
+    "qv-r8-high": "http://127.0.0.1:5006/#/experiments/1/runs/f7ee6df830c34796a9757588e6fa4394",
+    "all-r8-low": "http://127.0.0.1:5006/#/experiments/1/runs/4fe1458e62f34f1f90dbb7b0caf894b9",
+    "all-r8-high": "http://127.0.0.1:5006/#/experiments/1/runs/d19e532988bb4b6696e59ca89fd2edfa",
+    "storage": "http://127.0.0.1:5006/#/experiments/1/runs/5f3dc85a2c124d0ab568c4a2b0538a04"
+  },
+  "aliases": {
+    "candidate": "1"
+  },
+  "candidate": {
+    "kind": "adapter",
+    "name": "mlops-qwen3-adapter",
+    "version": "1",
+    "run_id": "d19e532988bb4b6696e59ca89fd2edfa",
+    "uri": "models:/mlops-qwen3-adapter/1"
+  },
+  "note": "MLflow доступен на ноутбуке; JSON-отчёты доступны в репозитории без сервера."
+}

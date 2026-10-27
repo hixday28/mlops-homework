@@ -1,0 +1,7 @@
+{
+  "kind": "adapter",
+  "name": "mlops-qwen3-adapter",
+  "version": "1",
+  "run_id": "d19e532988bb4b6696e59ca89fd2edfa",
+  "uri": "models:/mlops-qwen3-adapter/1"
+}

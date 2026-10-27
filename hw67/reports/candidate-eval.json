@@ -1,0 +1,686 @@
+{
+  "overall": {
+    "n": 50,
+    "correct": 32,
+    "valid": 45,
+    "errors": 0,
+    "accuracy": 0.64,
+    "format_rate": 0.9
+  },
+  "slices": {
+    "evaluation": {
+      "n": 10,
+      "correct": 6,
+      "valid": 10,
+      "errors": 0,
+      "accuracy": 0.6,
+      "format_rate": 1.0
+    },
+    "registry": {
+      "n": 10,
+      "correct": 7,
+      "valid": 10,
+      "errors": 0,
+      "accuracy": 0.7,
+      "format_rate": 1.0
+    },
+    "release_safety": {
+      "n": 10,
+      "correct": 6,
+      "valid": 10,
+      "errors": 0,
+      "accuracy": 0.6,
+      "format_rate": 1.0
+    },
+    "storage": {
+      "n": 10,
+      "correct": 4,
+      "valid": 5,
+      "errors": 0,
+      "accuracy": 0.4,
+      "format_rate": 0.5
+    },
+    "tracking": {
+      "n": 10,
+      "correct": 9,
+      "valid": 10,
+      "errors": 0,
+      "accuracy": 0.9,
+      "format_rate": 1.0
+    }
+  },
+  "per_item": [
+    {
+      "id": "mlops-001",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-002",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-003",
+      "raw": "{\"answer\": \"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-004",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-005",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-006",
+      "raw": "{\"answer\": \"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-007",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-008",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-009",
+      "raw": "{\"answer\": \"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-010",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "tracking"
+      ]
+    },
+    {
+      "id": "mlops-011",
+      "raw": "{\n  \"answer\": \"C\",\n  \"choices\": [\"A\", \"B\", \"C\", \"REFUSE\"]\n}",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-012",
+      "raw": "{\n  \"answer\": \"B\",\n  \"choices\": [\"A\", \"B\", \"C\", \"REFUSE\"]\n}",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-013",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-014",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-015",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-016",
+      "raw": "{\n  \"answer\": \"A\",\n  \"choices\": [\"A\", \"B\", \"C\", \"REFUSE\"]\n}",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-017",
+      "raw": "{\n  \"answer\": \"C\",\n  \"A\": \"Нет, файлам нужен сохранный artifact store\",\n  \"B\": \"Н",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-018",
+      "raw": "{\"answer\": \"B. Подключённый volume с артефактами\"}",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-019",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-020",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "storage"
+      ]
+    },
+    {
+      "id": "mlops-021",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-022",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-023",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-024",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-025",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-026",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-027",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-028",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-029",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-030",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "registry"
+      ]
+    },
+    {
+      "id": "mlops-031",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-032",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-033",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-034",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-035",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-036",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-037",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-038",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-039",
+      "raw": "{\"answer\": \"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-040",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mlops-041",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-042",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-043",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-044",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-045",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-046",
+      "raw": "{\"answer\": \"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-047",
+      "raw": "{\"answer\": \"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-048",
+      "raw": "{\"answer\": \"B\"}",
+      "parsed": "B",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-049",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": "A",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    },
+    {
+      "id": "mlops-050",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": "C",
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "release_safety"
+      ]
+    }
+  ],
+  "status": "complete",
+  "model": {
+    "kind": "adapter",
+    "name": "mlops-qwen3-adapter",
+    "version": "1",
+    "run_id": "d19e532988bb4b6696e59ca89fd2edfa",
+    "uri": "models:/mlops-qwen3-adapter/1"
+  },
+  "protocol_sha256": "7f517ef861a9f2df097642533ee144b8acfba3791bed7a575745dd12d084c4a1",
+  "golden_sha256": "feea6f854c9dc4adccf3309a81f763faeb1be0bc8722b466afc28ae2dc9cd6ec",
+  "baseline_spec_sha256": "f71269b95f6b4e1e160fa25e9af6c973517cfebad15880b75b56c8184680b163",
+  "behavioral": {
+    "overall": {
+      "n": 3,
+      "correct": 1,
+      "valid": 3,
+      "errors": 0,
+      "accuracy": 0.3333333333333333,
+      "format_rate": 1.0
+    },
+    "slices": {
+      "behavior": {
+        "n": 2,
+        "correct": 0,
+        "valid": 2,
+        "errors": 0,
+        "accuracy": 0.0,
+        "format_rate": 1.0
+      },
+      "tracking": {
+        "n": 1,
+        "correct": 1,
+        "valid": 1,
+        "errors": 0,
+        "accuracy": 1.0,
+        "format_rate": 1.0
+      }
+    },
+    "per_item": [
+      {
+        "id": "behavior-format",
+        "raw": "{\"answer\":\"A\"}",
+        "parsed": "A",
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "tracking"
+        ]
+      },
+      {
+        "id": "behavior-paraphrase",
+        "raw": "{\"answer\": \"A\"}",
+        "parsed": "A",
+        "valid": true,
+        "correct": false,
+        "error": null,
+        "slices": [
+          "behavior"
+        ]
+      },
+      {
+        "id": "behavior-refusal",
+        "raw": "{\"answer\":\"A\"}",
+        "parsed": "A",
+        "valid": true,
+        "correct": false,
+        "error": null,
+        "slices": [
+          "behavior"
+        ]
+      }
+    ]
+  },
+  "leakage": {
+    "exact_or_group_intersections": 0,
+    "n_train_index": 1267,
+    "n_golden": 50,
+    "n_behavioral": 3
+  },
+  "outputs_sha256": "f9ec2a491ae5d2202370287ddd35e99a813f01726b9ddb164064d0988ae03d73",
+  "evaluation_run_id": "bab1645d1d0e4bd286e972e38a254888"
+}

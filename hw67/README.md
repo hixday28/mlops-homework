@@ -40,7 +40,7 @@ Golden содержит 50 сценариев по лекциям 6–7, пят�
 В каждой строке сохранены источник, ожидаемая метка и обоснование разметки.
 Промпт модели не содержит expected. Behavioral считаются отдельно от golden.
 
-Файлы `data/tokenized.dvc` и `data/eval.dvc` фиксируют версии. Локальный DVC
+Файлы `inputs.dvc` и `eval.dvc` фиксируют версии. Локальный DVC
 remote — `dvc_remote_hw67` рядом с `mlops-homework`. На другой машине для
 тензоров нужно это хранилище либо выход ДЗ 4. Веса находятся в artifact volume
 MLflow; базовая модель берётся из Hugging Face с точной commit-ревизией.
@@ -56,16 +56,41 @@ MLflow; базовая модель берётся из Hugging Face с точн
 
 ## Результаты и видео
 
+Все девять проверок MLflow и 24 теста оценки пройдены. Лучшая конфигурация —
+all-r8-high, candidate версии 1. Accuracy: база 37/50, кандидат 32/50;
+формат: 49/50 и 45/50. Quality gate отказал; champion не назначен.
+Подробности и ограничения — в docs/conclusion.md.
+
 - `docs/comparison.csv`: шесть реальных runs, выгрузка с сервера.
 - `docs/defects.md`: четыре дефекта и доказательства исправлений.
 - `docs/conclusion.md`: протокол, метрики, пары ответов и решение.
 - `reports/`: копии JSON-отчётов, сырые ответы и ссылки на MLflow runs.
 
-Для видео 5–8 минут: откройте MLflow, покажите шесть дочерних runs и alias
-candidate. Затем `make eval`, `make check-negative`, `make check-storage`,
-`make check-all`. Отказ gate не является ошибкой выполнения задания.
-Покажите вывод и сравнение в docs, результаты в reports. Отпечаток
-неизменённых файлов tests/: `c42ac7788026`.
+Для видео 5–8 минут выполните команды по одной:
+
+```bash
+make up
+HF_HUB_OFFLINE=1 make eval
+HF_HUB_OFFLINE=1 make check-negative
+HF_HUB_OFFLINE=1 make check-storage
+HF_HUB_OFFLINE=1 make check-all
+```
+
+`make eval` ожидаемо завершится отказом: 0.64 < 0.74. Это решение gate,
+его не нужно исправлять ослаблением порога. `make promote` здесь не выполняется.
+
+1. MLflow: experiment hw67-mlops, завершённый sweep и шесть дочерних runs.
+   Откройте таблицу параметров/val loss и модель mlops-qwen3-adapter: версия 1,
+   alias candidate; champion отсутствует.
+2. docs/comparison.csv: шесть сопоставимых конфигураций и ресурсы.
+3. docs/conclusion.md: accuracy/формат, пять срезов, behavioral и разбор пар.
+4. reports/quality-gate.json, negative-gate.json: реальный отказ и отрицательный тест.
+5. Терминал: PASS сохранности, итог 9/9, отпечаток c42ac7788026 и OK (24 теста).
+6. docs/defects.md: четыре исправления. При необходимости покажите compose.yaml,
+   src/sweep.py, src/promote.py и evaluation/solution.py.
+
+Повторные sweep/evaluate для записи не нужны. Сырые ответы и результаты
+находятся в reports; состояние сервера сохраняется в volumes.
 
 После работы `make down` останавливает сервисы, сохраняя volumes.
 Команда `docker compose down -v` уничтожает хранилища — для обычной остановки

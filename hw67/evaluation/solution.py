@@ -72,6 +72,8 @@ def _validate_report(report, minimum):
         raise ValueError(f'Недостаточно примеров: {len(items)} < {minimum}')
     groups = defaultdict(list)
     for item in items.values():
+        if not {'id', 'raw', 'parsed', 'valid', 'correct', 'error', 'slices'} <= item.keys():
+            raise ValueError('Отсутствуют обязательные поля per_item')
         if type(item.get('valid')) is not bool or type(item.get('correct')) is not bool or 'error' not in item:
             raise ValueError('Неполный per_item')
         if item['correct'] and not item['valid'] or item['error'] is not None and item['valid']:
@@ -113,6 +115,12 @@ def quality_gate(baseline, candidate, critical_slices):
         for report in (baseline, candidate):
             if report.get('status') != 'complete' or not isinstance(report.get('model'), dict) or not report['model'] or not report['model'].get('kind'):
                 raise ValueError('Отчёт неполный или модель не определена')
+            model = report['model']
+            required = {'base': ('name', 'revision'), 'adapter': ('name', 'version', 'run_id', 'uri')}.get(model['kind'], ())
+            if any(not isinstance(model.get(k), str) or not model[k] for k in required):
+                raise ValueError('Не закреплена конкретная версия модели')
+            if model['kind'] == 'base' and len(model['revision']) != 40:
+                raise ValueError('У базы нет commit-ревизии')
         for key in ('protocol_sha256', 'golden_sha256', 'baseline_spec_sha256'):
             if not isinstance(baseline.get(key), str) or not baseline[key] or baseline[key] != candidate.get(key):
                 raise ValueError(f'Несовместимость: {key}')
