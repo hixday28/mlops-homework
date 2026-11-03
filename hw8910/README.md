@@ -48,6 +48,11 @@ make flow          # ожидаемый отказ по качеству, нен
 make api-up
 ```
 
+Prefect UI: http://127.0.0.1:4208. `make prefect-up` проверяет и API, и адрес API
+в настройках интерфейса. При старом адресе `4200` команда перезапускает только
+сервер этого ДЗ с правильным адресом `4208`, сохраняя базу и историю запусков.
+После исправления обновите вкладку браузера.
+
 `materialize` читает существующий training artifact. Базовые веса берутся из
 публичного HF по commit `c1899de289a04d12100db370d81485cdf75e47ca`. Файлы кандидата
 доступны [отдельно в artifact store](https://github.com/hixday28/mlops-homework/releases/tag/hw8910-artifact)
@@ -135,6 +140,11 @@ JSON, не TTFT/ITL; выводы о p95 не делаются. В сохран�
    красный прогон, затем снова обычный `make check` без изменения рабочего кода.
 2. [Prefect](http://127.0.0.1:4208): или сохранённые flow-логи — сбой после
    подготовки, Cached после повторного процесса, отказ gate, неизменный accepted.
+   В интерфейсе откройте **Runs → Flow runs**, затем последний запуск
+   `model-release` после `make flow`. Покажите `prepare-input` со статусом
+   **Cached**, `get-existing-artifact` со статусом **Completed** и
+   `check-complete-evaluation` со статусом **Failed**. В Logs видна причина:
+   `Регрессия accuracy: 0.6400 < 0.7400`; публикация после отказа не выполняется.
 3. `evidence/release-report.json` и `defects.csv`: связанный отказ и семь причин.
 4. `make api-up`, health/ready, настоящий ответ с model_id/runtime_sha256 и 422.
 5. `docs/benchmark.csv`, `evidence/requests.jsonl`: числа и очередь; STUB-проверка
