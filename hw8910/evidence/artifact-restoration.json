@@ -1,0 +1,9 @@
+{
+  "restored_from_fresh_clone": true,
+  "used_local_mlflow": false,
+  "exit_code": 0,
+  "evaluation_archive": "https://github.com/hixday28/mlops-homework/releases/tag/hw67-submission",
+  "candidate_artifact": "https://github.com/hixday28/mlops-homework/releases/tag/hw8910-artifact",
+  "all_file_sha256_verified": true,
+  "runtime_matches_committed_manifests": true
+}

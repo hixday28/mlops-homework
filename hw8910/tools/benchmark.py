@@ -1,6 +1,7 @@
 """Один и тот же набор 8+8 HTTP-запросов; сохраняются также ошибки."""
 from concurrent.futures import ThreadPoolExecutor
 import json
+import csv
 from pathlib import Path
 import statistics
 import time
@@ -64,6 +65,9 @@ def main():
             total_output_tokens=sum(x['output_tokens'] for x in ok)))
     (ROOT/'evidence/requests.jsonl').write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in attempts))
     (ROOT/'evidence/benchmark.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
+    with (ROOT/'docs/benchmark.csv').open('w') as f:
+        writer=csv.DictWriter(f,fieldnames=list(summary[0]),lineterminator='\n')
+        writer.writeheader();writer.writerows(summary)
     before_restart=ready
     stop();start();after_restart=get('/ready')[1];answer_after=call(prompts[0]['input'])
     assert before_restart['model_id']==after_restart['model_id'] and before_restart['runtime_sha256']==after_restart['runtime_sha256']
