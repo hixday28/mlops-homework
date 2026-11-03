@@ -1,0 +1,35 @@
+{
+  "before": {
+    "ready": true,
+    "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "runtime_sha256": "dbfbcfef03572b8a7369c3a0a47e8f1f9e2aa9516f266dc22dc2f548e24b265a",
+    "error": null
+  },
+  "after": {
+    "ready": true,
+    "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "runtime_sha256": "dbfbcfef03572b8a7369c3a0a47e8f1f9e2aa9516f266dc22dc2f548e24b265a",
+    "error": null
+  },
+  "response": {
+    "status": 200,
+    "error": null,
+    "client_seconds": 1.1561762080018525,
+    "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "request_id": "412f051d-b477-4782-bf05-ccdc82177c12",
+    "output_tokens": 7,
+    "generation_seconds": 1.1145444170033443,
+    "queue_seconds": 1.787499786587432e-05,
+    "service_seconds": 1.1177414170015254,
+    "body": {
+      "answer": "{\"answer\": \"A\"}",
+      "output_tokens": 7,
+      "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+      "runtime_sha256": "dbfbcfef03572b8a7369c3a0a47e8f1f9e2aa9516f266dc22dc2f548e24b265a",
+      "request_id": "412f051d-b477-4782-bf05-ccdc82177c12",
+      "queue_seconds": 1.787499786587432e-05,
+      "generation_seconds": 1.1145444170033443,
+      "service_seconds": 1.1177414170015254
+    }
+  }
+}

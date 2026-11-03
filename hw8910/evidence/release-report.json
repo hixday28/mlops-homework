@@ -1,0 +1,33 @@
+{
+  "model_id": "d19e532988bb4b6696e59ca89fd2edfa",
+  "model_sha256": "bb37bcf42a929aa504c8ac0c50195e8549fe6219a768515b511f37d3c31abe4d",
+  "protocol_sha256": "7f517ef861a9f2df097642533ee144b8acfba3791bed7a575745dd12d084c4a1",
+  "golden_sha256": "feea6f854c9dc4adccf3309a81f763faeb1be0bc8722b466afc28ae2dc9cd6ec",
+  "runtime_sha256": "52ede220c4b566650bbaecaaf95a58781577c05d1de7f1dfddc4902a8da512cc",
+  "status": "complete",
+  "passed": false,
+  "evaluation_run_id": "bab1645d1d0e4bd286e972e38a254888",
+  "metrics": {
+    "accuracy": 0.64,
+    "format_rate": 0.9
+  },
+  "sources_root": "..",
+  "source_bindings": {
+    "../hw67/evaluation/params.json": "a050ae984f0336ec4399edc5f017c2aac50e400fec41070e34e2c19a9bc85e81",
+    "../hw67/evaluation/baseline.json": "da0ace0ea269b2d9e5c0cad79ab54823d7bae8b4a65ece6446fa6adbbfed787e",
+    "../hw67/data/eval/golden.jsonl": "824fcfbc8bbc6718ea696bf76d0dc5366482b4f382fde91bf6aa87701a33651f",
+    "../hw67/data/eval/behavioral.jsonl": "cb21349a5682f2f62f69195da3cabf1931293899215a056b9aaf349190428539",
+    "../hw67/data/eval/training-index.jsonl": "6a9443c88b1c751e9e598a6504217583355ed1e0f6eb4accd0e73cb49361a63b",
+    "../hw67/evaluation/solution.py": "0e89d4d0b95d24603a273c5471ca9478d27d13181c6fc9eb270b9d32e1f944ce",
+    "../hw67/evaluation/__init__.py": "7e1eb882d1b9c88756e0500bb9413355aa5115fa7a0b75843def0ca9bd749e4b",
+    "../hw67/evaluation/cli.py": "02280bed7c4a4b096f8350ebc70dae72f2206c17398393ad3c0fbd6aa9cd15fe",
+    "../hw67/evaluation/contract.py": "4a9f63ca6904ce1913b56a1a158df8a5f800fdcb569a9522c95b7f1482ee53c8",
+    "../hw67/reports/baseline-eval.json": "095c2448d5d2eaed6f820d8a50e776bbc597c10cf20fdca4bd17a53b09d07d1c",
+    "../hw67/reports/baseline-outputs.json": "e48a3978b09710419f42fb4ce241d2a475df7ca3867000d6fa41708da2276f81",
+    "../hw67/reports/candidate-eval.json": "f3b07aeb3c260e33072e2a03fb05fee8aded2425265cbb3fc9478441fe6a9588",
+    "../hw67/reports/candidate-outputs.json": "eb9bc41e3b270c0c089551f3f44ffd0f4cf222e68d9f25bd22d59bcdb54e57d8",
+    "evidence/candidate-manifest.json": "38e20b0f868a34376d4cd206eab2e679f6faefb891c9050e795ac469d773a070",
+    "../hw67/uv.lock": "1b04113c75645b873a3dbf10511e3409c64a494f4a151ca2bcc1bea3f8e81b7a"
+  },
+  "reason": "Регрессия accuracy: 0.6400 < 0.7400"
+}

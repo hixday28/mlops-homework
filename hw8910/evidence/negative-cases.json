@@ -1,0 +1,66 @@
+[
+  {
+    "case": "refused",
+    "synthetic": true,
+    "rejected": true,
+    "reason": "Неполная оценка или отказ gate",
+    "accepted_before": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1",
+    "accepted_after": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1"
+  },
+  {
+    "case": "incomplete",
+    "synthetic": true,
+    "rejected": true,
+    "reason": "Неполная оценка или отказ gate",
+    "accepted_before": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1",
+    "accepted_after": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1"
+  },
+  {
+    "case": "truthy-string",
+    "synthetic": true,
+    "rejected": true,
+    "reason": "Неполная оценка или отказ gate",
+    "accepted_before": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1",
+    "accepted_after": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1"
+  },
+  {
+    "case": "foreign",
+    "synthetic": true,
+    "rejected": true,
+    "reason": "Отчёт не соответствует model_id",
+    "accepted_before": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1",
+    "accepted_after": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1"
+  },
+  {
+    "case": "nan",
+    "synthetic": true,
+    "rejected": true,
+    "reason": "Неверная метрика accuracy",
+    "accepted_before": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1",
+    "accepted_after": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1"
+  },
+  {
+    "case": "atomic-replace-error",
+    "synthetic": true,
+    "rejected": true,
+    "reason": "simulated disk error",
+    "accepted_before": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1",
+    "accepted_after": "aca0bc1332936349f868b84d800dec94e1a042f4aec3196fe4c4c031c3b5c6d1"
+  },
+  {
+    "case": "changed-runtime-with-recomputed-hash",
+    "synthetic": false,
+    "rejected": true,
+    "reason": "Manifest/runtime изменён относительно связанной оценки",
+    "accepted_before": "f45360e788b012329efc2aa1e0e3c3fdb1a11fadb70c588bb57a2edd237a9bae",
+    "accepted_after": "f45360e788b012329efc2aa1e0e3c3fdb1a11fadb70c588bb57a2edd237a9bae"
+  },
+  {
+    "case": "modified-saved-raw",
+    "synthetic": false,
+    "rejected": true,
+    "reason": "Отчёт устарел: протокол, golden, baseline или raw изменены",
+    "accepted_before": "f45360e788b012329efc2aa1e0e3c3fdb1a11fadb70c588bb57a2edd237a9bae",
+    "accepted_after": "f45360e788b012329efc2aa1e0e3c3fdb1a11fadb70c588bb57a2edd237a9bae"
+  }
+]

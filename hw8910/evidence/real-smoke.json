@@ -1,0 +1,38 @@
+{
+  "health": [
+    200,
+    {
+      "alive": true,
+      "backend": "transformers (real model)"
+    }
+  ],
+  "ready": {
+    "ready": true,
+    "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "runtime_sha256": "dbfbcfef03572b8a7369c3a0a47e8f1f9e2aa9516f266dc22dc2f548e24b265a",
+    "error": null
+  },
+  "response": {
+    "status": 200,
+    "error": null,
+    "client_seconds": 0.6943708750040969,
+    "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+    "request_id": "72511f34-cab2-47f8-9536-4e19fdac2e36",
+    "output_tokens": 7,
+    "generation_seconds": 0.6592126250034198,
+    "queue_seconds": 1.5458004781976342e-05,
+    "service_seconds": 0.66219733300386,
+    "body": {
+      "answer": "{\"answer\": \"A\"}",
+      "output_tokens": 7,
+      "model_id": "baseline:Qwen/Qwen3-0.6B@c1899de289a04d12100db370d81485cdf75e47ca",
+      "runtime_sha256": "dbfbcfef03572b8a7369c3a0a47e8f1f9e2aa9516f266dc22dc2f548e24b265a",
+      "request_id": "72511f34-cab2-47f8-9536-4e19fdac2e36",
+      "queue_seconds": 1.5458004781976342e-05,
+      "generation_seconds": 0.6592126250034198,
+      "service_seconds": 0.66219733300386
+    }
+  },
+  "baseline_raw": "{\"answer\": \"A\"}",
+  "same_answer_as_saved_baseline": true
+}

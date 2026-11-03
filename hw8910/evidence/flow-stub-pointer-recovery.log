@@ -1,0 +1,12 @@
+11:05:31.905 | INFO    | Flow run 'grateful-caiman' - Beginning flow run 'grateful-caiman' for flow 'model-release'
+11:05:31.910 | INFO    | Flow run 'grateful-caiman' - View at http://127.0.0.1:4208/runs/flow-run/e7923c30-74bd-4d8b-b9c4-4a20f0d0f80b
+11:05:32.011 | INFO    | Task run 'prepare-input-ef3' - Finished in state Cached(type=COMPLETED)
+11:05:32.013 | INFO    | Flow run 'grateful-caiman' - PREPARE_STATE Cached b6e6596c96ad3740fa7d0fabbd6f0e73105dd21fb9e3bccf946631c894bad6e6
+11:05:32.015 | INFO    | Task run 'get-existing-artifact-2e9' - READ EXISTING ARTIFACT model-B.txt — no training
+11:05:32.017 | INFO    | Task run 'get-existing-artifact-2e9' - Finished in state Completed()
+11:05:32.020 | INFO    | Task run 'check-complete-evaluation-bb1' - Finished in state Completed()
+11:05:32.026 | INFO    | Task run 'publish-accepted-d79' - Finished in state Completed()
+11:05:32.922 | INFO    | Flow run 'grateful-caiman' - Finished in state Completed()
+{'release_id': 'cdfa2da746093e2a2c185d1166718c0d01747ac18884945b0faa68c9ad9c3082', 'model_id': 'fixture-B'}
+
+Exit code: 0

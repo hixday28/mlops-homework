@@ -53,3 +53,8 @@ make check
 
 [Код и запуск](hw67/README.md), [сравнение](hw67/docs/comparison.csv),
 [единый вывод](hw67/docs/conclusion.md), [разбор дефектов](hw67/docs/defects.md).
+
+## ДЗ 8+9+10. Выпуск и API
+
+[Код и команды](hw8910/README.md), [отчёт](hw8910/REPORT.txt),
+[семь дефектов](hw8910/defects.csv), [замер API](hw8910/docs/benchmark.csv).

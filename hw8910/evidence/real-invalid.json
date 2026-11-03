@@ -1,0 +1,42 @@
+{
+  "calls_before": 2,
+  "calls_after": 2,
+  "requests": [
+    {
+      "status": 422,
+      "response": {
+        "error": "prompt: 1–2048 символов"
+      }
+    },
+    {
+      "status": 422,
+      "response": {
+        "error": "max_new_tokens: 32 (фиксированный)"
+      }
+    },
+    {
+      "status": 422,
+      "response": {
+        "error": "max_new_tokens: 32 (фиксированный)"
+      }
+    },
+    {
+      "status": 422,
+      "response": {
+        "error": "max_new_tokens: 32 (фиксированный)"
+      }
+    },
+    {
+      "status": 422,
+      "response": {
+        "error": "max_new_tokens: 32 (фиксированный)"
+      }
+    },
+    {
+      "status": 422,
+      "response": {
+        "error": "Превышен лимит входных токенов"
+      }
+    }
+  ]
+}

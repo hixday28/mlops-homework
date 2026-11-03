@@ -1,0 +1,38 @@
+{
+  "original_commit": "e4904d7ae47569b6142398fa1703e29c5a82c612",
+  "fix_commit": "553fa2e7c040330623eea39a82fcaa73c74c38c2",
+  "python": "3.12.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "chip": "Apple M4",
+  "memory_bytes": 17179869184,
+  "packages": {
+    "prefect": "3.9.0",
+    "fastapi": "0.150.0",
+    "uvicorn": "0.54.0",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "peft": "0.21.0",
+    "tokenizers": "0.23.2",
+    "numpy": "2.5.3"
+  },
+  "provided_tests_fingerprint": "09bd65e6b886",
+  "provided_tests_unchanged": true,
+  "new_tests": 9,
+  "new_tests_failing_on_original": [
+    "test_atomic_write_failure_preserves_pointer",
+    "test_cache_recovery_and_changed_input",
+    "test_http_invalid_requests_do_not_call_backend",
+    "test_http_loaded_version_restart_and_rollback",
+    "test_http_readiness_before_generation",
+    "test_http_tampered_artifact_never_ready",
+    "test_pointer_journal_failure_recovery",
+    "test_refusal_incomplete_and_foreign_report_keep_pointer",
+    "test_repeat_publication_across_processes"
+  ],
+  "corrected_unique_tests": 22,
+  "drivers": [
+    "stdlib",
+    "fastapi"
+  ],
+  "ci": "local; example workflow not enabled"
+}

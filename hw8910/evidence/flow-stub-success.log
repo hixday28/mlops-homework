@@ -1,0 +1,12 @@
+11:05:25.571 | INFO    | Flow run 'topaz-smilodon' - Beginning flow run 'topaz-smilodon' for flow 'model-release'
+11:05:25.577 | INFO    | Flow run 'topaz-smilodon' - View at http://127.0.0.1:4208/runs/flow-run/3a81fd6d-a790-44dd-bf04-51312f066f67
+11:05:25.693 | INFO    | Task run 'prepare-input-82d' - Finished in state Cached(type=COMPLETED)
+11:05:25.696 | INFO    | Flow run 'topaz-smilodon' - PREPARE_STATE Cached b6e6596c96ad3740fa7d0fabbd6f0e73105dd21fb9e3bccf946631c894bad6e6
+11:05:25.698 | INFO    | Task run 'get-existing-artifact-712' - READ EXISTING ARTIFACT model-B.txt — no training
+11:05:25.699 | INFO    | Task run 'get-existing-artifact-712' - Finished in state Completed()
+11:05:25.703 | INFO    | Task run 'check-complete-evaluation-06a' - Finished in state Completed()
+11:05:25.708 | INFO    | Task run 'publish-accepted-1da' - Finished in state Completed()
+11:05:26.591 | INFO    | Flow run 'topaz-smilodon' - Finished in state Completed()
+{'release_id': 'cdfa2da746093e2a2c185d1166718c0d01747ac18884945b0faa68c9ad9c3082', 'model_id': 'fixture-B'}
+
+Exit code: 0

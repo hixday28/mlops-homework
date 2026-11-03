@@ -1,0 +1,138 @@
+11:05:29.783 | INFO    | Flow run 'traditional-guppy' - Beginning flow run 'traditional-guppy' for flow 'model-release'
+11:05:29.788 | INFO    | Flow run 'traditional-guppy' - View at http://127.0.0.1:4208/runs/flow-run/89edef67-4e15-4038-95ca-c4d21b5f5f86
+11:05:29.890 | INFO    | Task run 'prepare-input-908' - Finished in state Cached(type=COMPLETED)
+11:05:29.893 | INFO    | Flow run 'traditional-guppy' - PREPARE_STATE Cached b6e6596c96ad3740fa7d0fabbd6f0e73105dd21fb9e3bccf946631c894bad6e6
+11:05:29.895 | INFO    | Task run 'get-existing-artifact-695' - READ EXISTING ARTIFACT model-B.txt — no training
+11:05:29.896 | INFO    | Task run 'get-existing-artifact-695' - Finished in state Completed()
+11:05:29.900 | INFO    | Task run 'check-complete-evaluation-c5b' - Finished in state Completed()
+11:05:29.903 | ERROR   | Task run 'publish-accepted-fd9' - Task run failed with exception: RuntimeError('Инъекция сбоя между указателем и журналом')
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1030, in run_context
+    yield self
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1699, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1047, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 53, in publish_task
+    ident=publish_once(root,manifest,report,fail_after_pointer=fail_after_pointer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/publication.py", line 58, in publish_once
+    _complete(root,intent,fail_after_pointer)
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/publication.py", line 31, in _complete
+    if fail_after_pointer:raise RuntimeError('Инъекция сбоя между указателем и журналом')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Инъекция сбоя между указателем и журналом
+11:05:29.907 | ERROR   | Task run 'publish-accepted-fd9' - Finished in state Failed('Task run encountered an exception RuntimeError: Инъекция сбоя между указателем и журналом')
+11:05:30.801 | ERROR   | Flow run 'traditional-guppy' - Encountered exception during execution: RuntimeError('Инъекция сбоя между указателем и журналом')
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 1330, in run_context
+    yield self
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 2111, in run_flow_sync
+    engine.call_flow_fn()
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 1350, in call_flow_fn
+    result = call_with_parameters(self.flow.fn, self.parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 79, in release_flow
+    return publish_task(str(root),artifact,evaluation,fail_after_pointer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/tasks.py", line 1240, in __call__
+    return run_task(
+           ^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1932, in run_task
+    return run_task_sync(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1702, in run_task_sync
+    return engine.state if return_type == "state" else engine.result()
+                                                       ^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 622, in result
+    raise self._raised
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1030, in run_context
+    yield self
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1699, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1047, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 53, in publish_task
+    ident=publish_once(root,manifest,report,fail_after_pointer=fail_after_pointer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/publication.py", line 58, in publish_once
+    _complete(root,intent,fail_after_pointer)
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/publication.py", line 31, in _complete
+    if fail_after_pointer:raise RuntimeError('Инъекция сбоя между указателем и журналом')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Инъекция сбоя между указателем и журналом
+11:05:30.832 | INFO    | Flow run 'traditional-guppy' - Finished in state Failed('Flow run encountered an exception: RuntimeError: Инъекция сбоя между указателем и журналом')
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 89, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 86, in main
+    a=p.parse_args();print(release_flow(str(Path(a.workspace).resolve()),a.fail_after_prepare,a.fail_after_pointer,a.stub,a.refresh_preparation))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flows.py", line 1887, in __call__
+    return run_flow(
+           ^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 2268, in run_flow
+    ret_val = run_flow_sync(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 2113, in run_flow_sync
+    return engine.state if return_type == "state" else engine.result()
+                                                       ^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 788, in result
+    raise self._raised
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 1330, in run_context
+    yield self
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 2111, in run_flow_sync
+    engine.call_flow_fn()
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/flow_engine.py", line 1350, in call_flow_fn
+    result = call_with_parameters(self.flow.fn, self.parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 79, in release_flow
+    return publish_task(str(root),artifact,evaluation,fail_after_pointer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/tasks.py", line 1240, in __call__
+    return run_task(
+           ^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1932, in run_task
+    return run_task_sync(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1702, in run_task_sync
+    return engine.state if return_type == "state" else engine.result()
+                                                       ^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 622, in result
+    raise self._raised
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1030, in run_context
+    yield self
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1699, in run_task_sync
+    engine.call_task_fn(txn)
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/task_engine.py", line 1047, in call_task_fn
+    result = call_with_parameters(self.task.fn, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/.venv/lib/python3.12/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/flow.py", line 53, in publish_task
+    ident=publish_once(root,manifest,report,fail_after_pointer=fail_after_pointer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/publication.py", line 58, in publish_once
+    _complete(root,intent,fail_after_pointer)
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/publication.py", line 31, in _complete
+    if fail_after_pointer:raise RuntimeError('Инъекция сбоя между указателем и журналом')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Инъекция сбоя между указателем и журналом
+
+Exit code: 1

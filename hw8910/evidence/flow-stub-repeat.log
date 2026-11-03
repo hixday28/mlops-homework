@@ -1,0 +1,12 @@
+11:05:27.670 | INFO    | Flow run 'shiny-lizard' - Beginning flow run 'shiny-lizard' for flow 'model-release'
+11:05:27.677 | INFO    | Flow run 'shiny-lizard' - View at http://127.0.0.1:4208/runs/flow-run/6bc9bf76-b110-40d1-ab3d-b4ab9d810ff4
+11:05:27.783 | INFO    | Task run 'prepare-input-e3c' - Finished in state Cached(type=COMPLETED)
+11:05:27.785 | INFO    | Flow run 'shiny-lizard' - PREPARE_STATE Cached b6e6596c96ad3740fa7d0fabbd6f0e73105dd21fb9e3bccf946631c894bad6e6
+11:05:27.787 | INFO    | Task run 'get-existing-artifact-8f5' - READ EXISTING ARTIFACT model-B.txt — no training
+11:05:27.789 | INFO    | Task run 'get-existing-artifact-8f5' - Finished in state Completed()
+11:05:27.792 | INFO    | Task run 'check-complete-evaluation-62d' - Finished in state Completed()
+11:05:27.796 | INFO    | Task run 'publish-accepted-1c7' - Finished in state Completed()
+11:05:28.690 | INFO    | Flow run 'shiny-lizard' - Finished in state Completed()
+{'release_id': 'cdfa2da746093e2a2c185d1166718c0d01747ac18884945b0faa68c9ad9c3082', 'model_id': 'fixture-B'}
+
+Exit code: 0

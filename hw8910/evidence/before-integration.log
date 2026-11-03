@@ -1,0 +1,156 @@
+test_atomic_write_failure_preserves_pointer (test_integration.ProcessIntegration.test_atomic_write_failure_preserves_pointer) ... FAIL
+test_cache_recovery_and_changed_input (test_integration.ProcessIntegration.test_cache_recovery_and_changed_input) ... FAIL
+test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) ...
+  test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': ''}) ... FAIL
+  test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': 0}) ... FAIL
+  test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': 100000}) ... FAIL
+  test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': '32'}) ... FAIL
+  test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': True}) ... FAIL
+test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) ... FAIL
+test_http_loaded_version_restart_and_rollback (test_integration.ProcessIntegration.test_http_loaded_version_restart_and_rollback) ... FAIL
+test_http_readiness_before_generation (test_integration.ProcessIntegration.test_http_readiness_before_generation) ... FAIL
+test_http_tampered_artifact_never_ready (test_integration.ProcessIntegration.test_http_tampered_artifact_never_ready) ... FAIL
+test_pointer_journal_failure_recovery (test_integration.ProcessIntegration.test_pointer_journal_failure_recovery) ... FAIL
+test_refusal_incomplete_and_foreign_report_keep_pointer (test_integration.ProcessIntegration.test_refusal_incomplete_and_foreign_report_keep_pointer) ...
+  test_refusal_incomplete_and_foreign_report_keep_pointer (test_integration.ProcessIntegration.test_refusal_incomplete_and_foreign_report_keep_pointer) (report='report-incomplete.json') ... FAIL
+  test_refusal_incomplete_and_foreign_report_keep_pointer (test_integration.ProcessIntegration.test_refusal_incomplete_and_foreign_report_keep_pointer) (report='report-A.json') ... FAIL
+test_repeat_publication_across_processes (test_integration.ProcessIntegration.test_repeat_publication_across_processes) ... FAIL
+
+======================================================================
+FAIL: test_atomic_write_failure_preserves_pointer (test_integration.ProcessIntegration.test_atomic_write_failure_preserves_pointer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 92, in test_atomic_write_failure_preserves_pointer
+    with self.assertRaises(OSError):module.publish(manifest,report,target)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: OSError not raised
+
+======================================================================
+FAIL: test_cache_recovery_and_changed_input (test_integration.ProcessIntegration.test_cache_recovery_and_changed_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 45, in test_cache_recovery_and_changed_input
+    self.assertIn('PREPARED',self.command('run',expected=0).stdout)
+AssertionError: 'PREPARED' not found in 'CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4\nPUBLISHED fixture-B\n'
+
+======================================================================
+FAIL: test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 168, in test_http_invalid_requests_do_not_call_backend
+    self.assertTrue(400<=status<500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 168, in test_http_invalid_requests_do_not_call_backend
+    self.assertTrue(400<=status<500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': 100000})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 168, in test_http_invalid_requests_do_not_call_backend
+    self.assertTrue(400<=status<500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': '32'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 168, in test_http_invalid_requests_do_not_call_backend
+    self.assertTrue(400<=status<500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend) (payload={'prompt': 'тест', 'max_new_tokens': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 168, in test_http_invalid_requests_do_not_call_backend
+    self.assertTrue(400<=status<500)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_http_invalid_requests_do_not_call_backend (test_integration.ProcessIntegration.test_http_invalid_requests_do_not_call_backend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 171, in test_http_invalid_requests_do_not_call_backend
+    self.assertEqual(self.http('/debug')[1]['calls'],before+1)
+AssertionError: 6 != 1
+
+======================================================================
+FAIL: test_http_loaded_version_restart_and_rollback (test_integration.ProcessIntegration.test_http_loaded_version_restart_and_rollback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 152, in test_http_loaded_version_restart_and_rollback
+    self.assertEqual(status,200);self.assertEqual(answer['model_id'],'fixture-A')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'fixture-B' != 'fixture-A'
+- fixture-B
+?         ^
++ fixture-A
+?         ^
+
+
+======================================================================
+FAIL: test_http_readiness_before_generation (test_integration.ProcessIntegration.test_http_readiness_before_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 141, in test_http_readiness_before_generation
+    self.assertEqual(self.http('/ready')[0],503,'ready не может опережать прогрев')
+AssertionError: 200 != 503 : ready не может опережать прогрев
+
+======================================================================
+FAIL: test_http_tampered_artifact_never_ready (test_integration.ProcessIntegration.test_http_tampered_artifact_never_ready)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 176, in test_http_tampered_artifact_never_ready
+    self.assertEqual(self.http('/ready')[0],503)
+AssertionError: 200 != 503
+
+======================================================================
+FAIL: test_pointer_journal_failure_recovery (test_integration.ProcessIntegration.test_pointer_journal_failure_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 84, in test_pointer_journal_failure_recovery
+    self.assertEqual(len((self.root/'publications.jsonl').read_text().splitlines()),1)
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_refusal_incomplete_and_foreign_report_keep_pointer (test_integration.ProcessIntegration.test_refusal_incomplete_and_foreign_report_keep_pointer) (report='report-incomplete.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 56, in test_refusal_incomplete_and_foreign_report_keep_pointer
+    self.assertNotEqual(result.returncode,0,result.stdout)
+AssertionError: 0 == 0 : CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+PUBLISHED fixture-B
+
+
+======================================================================
+FAIL: test_refusal_incomplete_and_foreign_report_keep_pointer (test_integration.ProcessIntegration.test_refusal_incomplete_and_foreign_report_keep_pointer) (report='report-A.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 56, in test_refusal_incomplete_and_foreign_report_keep_pointer
+    self.assertNotEqual(result.returncode,0,result.stdout)
+AssertionError: 0 == 0 : CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+PUBLISHED fixture-B
+
+
+======================================================================
+FAIL: test_repeat_publication_across_processes (test_integration.ProcessIntegration.test_repeat_publication_across_processes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/hixday/Projects/MLOPS/mlops-homework/hw8910/tests/test_integration.py", line 63, in test_repeat_publication_across_processes
+    self.assertEqual(len(events),1,'Один выпуск B не должен создавать два события')
+AssertionError: 2 != 1 : Один выпуск B не должен создавать два события
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.499s
+
+FAILED (failures=15)
+
+Original commit: e4904d7
+Exit code: 1
