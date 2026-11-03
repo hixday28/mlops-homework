@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import release
+from publication import publish_once, remember, append
 
 
 def canonical(value):
@@ -43,6 +44,7 @@ def initialize(root):
         report.update(status='complete',passed=True,evaluation_run_id=f'fixture-eval-{version}',metrics={'accuracy':.8,'format_rate':1.0},synthetic=True)
         write(root/f'manifest-{version}.json',m);write(root/f'report-{version}.json',report)
     write(root/'accepted.json',read(root/'manifest-A.json'))
+    remember(root,read(root/'manifest-A.json'),read(root/'report-A.json'))
     report=read(root/'report-B.json');report['status']='running';report['passed']='false'
     write(root/'report-incomplete.json',report)
     report=read(root/'report-B.json');report['passed']=False
@@ -62,23 +64,26 @@ def prepare(root):
     write(entry,result);print('PREPARED',result['input_sha256']);return result
 
 
-def run(root,report_name,fail_after_prepare=False):
+def run(root,report_name,fail_after_prepare=False,manifest_name='manifest-B.json',rollback=False,fail_after_pointer=False):
+    import uuid
+    append(root/'attempts.jsonl',{'attempt_id':str(uuid.uuid4()),'manifest':manifest_name,'report':report_name})
     prepared=prepare(root)
     if fail_after_prepare:raise RuntimeError('Инъекция сбоя после подготовки')
-    manifest=read(root/'manifest-B.json');report=read(root/report_name)
-    release.publish(manifest,report,root/'accepted.json')
-    with (root/'publications.jsonl').open('a') as f:
-        f.write(json.dumps({'model_id':manifest['model_id'],'prepared':prepared['input_sha256']})+'\n')
-    print('PUBLISHED',manifest['model_id'])
+    manifest=read(root/manifest_name);report=read(root/report_name)
+    ident=publish_once(root,manifest,report,rollback=rollback,fail_after_pointer=fail_after_pointer)
+    print('PUBLISHED',manifest['model_id'],ident)
 
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,default=Path('.lab'))
     sub=parser.add_subparsers(dest='command',required=True);sub.add_parser('init')
     run_parser=sub.add_parser('run');run_parser.add_argument('--report',default='report-B.json');run_parser.add_argument('--fail-after-prepare',action='store_true')
+    run_parser.add_argument('--manifest',default='manifest-B.json')
+    run_parser.add_argument('--rollback',action='store_true')
+    run_parser.add_argument('--fail-after-pointer',action='store_true')
     args=parser.parse_args()
     if args.command=='init':initialize(args.workspace)
-    else:run(args.workspace,args.report,args.fail_after_prepare)
+    else:run(args.workspace,args.report,args.fail_after_prepare,args.manifest,args.rollback,args.fail_after_pointer)
 
 
 if __name__=='__main__':main()
